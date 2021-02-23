@@ -174,7 +174,7 @@ figure(2);clf;plotPoly(F,V,'edgeOff');
 view([-120 10]);sun1;
 view([-120 10]);
 
-
+% Lager gif
 saveFigToTurntableAnimGif('truss.gif','ant',50);
 
 %nedover = objFun1(noderFlytt)
