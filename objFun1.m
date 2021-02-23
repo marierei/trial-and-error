@@ -1,17 +1,10 @@
 function obj = objFun1(x)
-% Følgende format er nødvendig på objektivfunksjonen for å kunne inludere
-% den i flere av Matlabs optimaliseringsalgoritmer som vi kan bruke.
 
-% x er en 1-dim vektor som inneholder alle xyz-posisjons-justeringer på de nodene som
-% vi vil justere under optimaliseringen. 
-
-% Resultatet fra funksjonen må kun være en skalar 
-% Her er din kode som inneholder obj = 1*nedBoy + 0.001*maxE
-% Definerer global variabel i dette scopet
 global N;
 global E;
 global extF;
 global extC;
+global x_plot;
 
 
 for i = 1 : size(x,1)
@@ -36,7 +29,6 @@ T(9,:) = N(9,:);
 T(10,:) = N(10,:) - x(5,:);
 T(11,:) = N(11,:) - x(6,:);
 
-
 % Finner stress og displacement for ny matrise
 [sE, dN] = FEM_truss(T,E, extF,extC);
 
@@ -46,6 +38,11 @@ nedBoy = dN(6,3);
 
 %obj = nedBoy;
 %obj = maxE;
-obj = 1*nedBoy + 0.001*maxE;
+y = 1*nedBoy + 0.001*maxE;
 
+figure(3);
+plot(x_plot, y);
+x_plot = x_plot + 1;
+
+obj = y
 end

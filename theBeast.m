@@ -94,6 +94,8 @@ hold on;plotMeshCext(N,extC,100);
 hold on;plotMeshFext(N-visuellScale*dN,extF, 0.01);
 view([-120 10]);
 
+x_plot = 1;
+
 opprinneligLengde = maxEdgeLng(E,N)
 
 % Finner nedbøyningen av node 6 i z-retningen
