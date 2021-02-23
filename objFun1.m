@@ -37,6 +37,7 @@ T(10,:) = N(10,:) - x(5,:);
 T(11,:) = N(11,:) - x(6,:);
 
 
+% Finner stress og displacement for ny matrise
 [sE, dN] = FEM_truss(T,E, extF,extC);
 
 maxE = maxEdgeLng(E,T);
